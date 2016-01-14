@@ -30,4 +30,67 @@ class Direction
      * @ORM\Column(name="code", type="string")
      */
     private $code;
+
+    /**
+     * Id getter
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Id setter
+     * @param mixed $id
+     * @return int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this->id;
+    }
+
+    /**
+     * Name getter
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Name setter
+     * @param string $name
+     * @return string
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this->name;
+    }
+
+    /**
+     * Code getter
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Code setter
+     * @param string $code
+     * @return string
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this->code;
+    }
 }

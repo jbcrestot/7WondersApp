@@ -14,6 +14,7 @@ use AppBundle\Entity\Conditions\Direction;
 class Benefit
 {
     /**
+     * @var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -61,6 +62,90 @@ class Benefit
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Resource")
      */
     private $resources;
+
+    /**
+     * Id getter
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Id setter
+     * @param int $id
+     * @return int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this->id;
+    }
+
+    /**
+     * Golds getter
+     * @return int
+     */
+    public function getGolds()
+    {
+        return $this->golds;
+    }
+
+    /**
+     * Golds setter
+     * @param int $golds
+     * @return int
+     */
+    public function setGolds($golds)
+    {
+        $this->golds = $golds;
+
+        return $this->golds;
+    }
+
+    /**
+     * Victory points getter
+     * @return int
+     */
+    public function getVictoryPoints()
+    {
+        return $this->victoryPoints;
+    }
+
+    /**
+     * Victory points setter
+     * @param int $victoryPoints
+     * @return int
+     */
+    public function setVictoryPoints($victoryPoints)
+    {
+        $this->victoryPoints = $victoryPoints;
+
+        return $this->victoryPoints;
+    }
+
+    /**
+     * Military forces getter
+     * @return int
+     */
+    public function getMilitaryForces()
+    {
+        return $this->militaryForces;
+    }
+
+    /**
+     * Military forces setter
+     * @param int $militaryForces
+     * @return int
+     */
+    public function setMilitaryForces($militaryForces)
+    {
+        $this->militaryForces = $militaryForces;
+
+        return $this->militaryForces;
+    }
 
     /**
      * Sciences getter
@@ -136,7 +221,7 @@ class Benefit
 
     /**
      * Resources adder
-     * @param Resource $resource
+     * @param \AppBundle\Entity\Resource $resource
      * @return Resource[]
      */
     public function addResource(Resource $resource)

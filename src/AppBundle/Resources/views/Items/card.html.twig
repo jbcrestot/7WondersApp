@@ -1,0 +1,29 @@
+<div>
+    <h2>Carte "{{ item.name }}"</h2>
+
+    <h3>Cartes précédentes:</h3>
+    <ul>
+        {% if item.previous is not empty %}
+            {% for previous in item.previous %}
+                <li>
+                    {{ previous.name }}
+                </li>
+            {% endfor %}
+        {% else %}
+            Aucune carte précédente.
+        {% endif %}
+    </ul>
+
+    <h3>Cartes suivantes:</h3>
+    <ul>
+        {% if item.next is not empty %}
+            {% for next in item.next %}
+                <li>
+                    {{ next.name }}
+                </li>
+            {% endfor %}
+        {% else %}
+            Aucune carte suivante.
+        {% endif %}
+    </ul>
+</div>

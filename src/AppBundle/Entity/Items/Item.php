@@ -14,6 +14,7 @@ use AppBundle\Entity\Resource;
 abstract class Item
 {
     /**
+     * @var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -31,6 +32,27 @@ abstract class Item
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Resource")
      */
     protected $requirements;
+
+    /**
+     * Id getter
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Id setter
+     * @param int $id
+     * @return int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this->id;
+    }
 
     /**
      * Benefit getter
@@ -64,7 +86,7 @@ abstract class Item
 
     /**
      * Requirements adder
-     * @param Resource $requirement
+     * @param \AppBundle\Entity\Resource $requirement
      * @return Resource[]
      */
     public function addRequirement(Resource $requirement)

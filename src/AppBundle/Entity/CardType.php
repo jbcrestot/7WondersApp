@@ -15,6 +15,7 @@ use AppBundle\Entity\Items\Card;
 class CardType
 {
     /**
+     * @var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -38,6 +39,69 @@ class CardType
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Items\Card", mappedBy="type")
      */
     private $cards;
+
+    /**
+     * Id getter
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Id setter
+     * @param int $id
+     * @return int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this->id;
+    }
+
+    /**
+     * Name getter
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Name setter
+     * @param string $name
+     * @return string
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this->name;
+    }
+
+    /**
+     * Color getter
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Color setter
+     * @param string $color
+     * @return string
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this->color;
+    }
 
     /**
      * Cards getter

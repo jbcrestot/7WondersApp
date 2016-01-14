@@ -45,20 +45,124 @@ class Card extends Item
 
     /**
      * @var Card[]
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Items\Card", mappedBy="cardsTo")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Items\Card", mappedBy="next")
      */
-    private $cardsFrom;
+    private $previous;
 
     /**
      * @var Card[]
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Items\Card", inversedBy="cardsFrom")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Items\Card", inversedBy="previous")
      * @ORM\JoinTable(
      *     name="card_chain",
      *     joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="chain_id", referencedColumnName="id")}
      * )
      */
-    private $cardsTo;
+    private $next;
+
+    /**
+     * Name getter
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Name setter
+     * @param string $name
+     * @return string
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this->name;
+    }
+
+    /**
+     * MinPlayers getter
+     * @return int
+     */
+    public function getMinPlayers()
+    {
+        return $this->minPlayers;
+    }
+
+    /**
+     * MinPlayers setter
+     * @param int $minPlayers
+     * @return int
+     */
+    public function setMinPlayers($minPlayers)
+    {
+        $this->minPlayers = $minPlayers;
+
+        return $this->minPlayers;
+    }
+
+    /**
+     * Image getter
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Image setter
+     * @param string $image
+     * @return string
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this->image;
+    }
+
+    /**
+     * Age getter
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * Age setter
+     * @param int $age
+     * @return int
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+
+        return $this->age;
+    }
+
+    /**
+     * Type getter
+     * @return CardType
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Type setter
+     * @param CardType $type
+     * @return CardType
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this->type;
+    }
 
     /**
      * Card type getter
@@ -82,44 +186,44 @@ class Card extends Item
     }
 
     /**
-     * Cards from cards getter
+     * Previous cards getter
      * @return Card[]
      */
-    public function getCardsFrom()
+    public function getPrevious()
     {
-        return $this->cardsFrom;
+        return $this->previous;
     }
 
     /**
-     * Cards from cards adder
+     * Previous cards adder
      * @param Card $card
      * @return Card[]
      */
-    public function addCardFrom(Card $card)
+    public function addPrevious(Card $card)
     {
-        $this->cardsFrom[] = $card;
+        $this->previous[] = $card;
 
-        return $this->cardsFrom;
+        return $this->previous;
     }
 
     /**
-     * Cards to cards getter
+     * Next cards getter
      * @return Card[]
      */
-    public function getCardsTo()
+    public function getNext()
     {
-        return $this->cardsTo;
+        return $this->next;
     }
 
     /**
-     * Cards to cards adder
+     * Next cards adder
      * @param Card $card
      * @return Card[]
      */
-    public function addCardTo(Card $card)
+    public function addNext(Card $card)
     {
-        $this->cardsTo[] = $card;
+        $this->next[] = $card;
 
-        return $this->cardsTo;
+        return $this->next;
     }
 }

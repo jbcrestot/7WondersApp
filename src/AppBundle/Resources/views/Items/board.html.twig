@@ -1,0 +1,16 @@
+<div>
+    <h2>Board "{{ item.name }}"</h2>
+
+    <h3>Merveilles:</h3>
+    <ul>
+        {% if item.wonders is not empty %}
+            {% for wonder in item.wonders %}
+                <li>
+                    {{ wonder.name }}
+                </li>
+            {% endfor %}
+        {% else %}
+            Aucune merveille associée.
+        {% endif %}
+    </ul>
+</div>

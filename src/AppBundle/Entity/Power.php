@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Power
 {
     /**
+     * @var int
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -24,4 +25,46 @@ class Power
      * @ORM\Column(name="code", type="string")
      */
     private $code;
+
+    /**
+     * Id getter
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Id setter
+     * @param int $id
+     * @return int
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this->id;
+    }
+
+    /**
+     * Code getter
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * Code setter
+     * @param string $code
+     * @return string
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this->code;
+    }
 }
