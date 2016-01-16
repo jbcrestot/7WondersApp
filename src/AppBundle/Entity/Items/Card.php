@@ -40,6 +40,7 @@ class Card extends Item
     /**
      * @var CardType
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\CardType", inversedBy="cards")
+     *
      */
     private $type;
 
