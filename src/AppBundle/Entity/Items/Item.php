@@ -89,10 +89,15 @@ abstract class Item
      * @param Resource $requirement
      * @return self
      */
-    public function addRequirement(Resource $requirement)
+    public function addRequirement(Resource $requirement): array
     {
         $this->requirements[] = $requirement;
 
         return $this;
+    }
+
+    public function setRequirements(array $requirements): array
+    {
+        return $this->requirements = $requirements;
     }
 }

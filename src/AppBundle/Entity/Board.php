@@ -30,9 +30,21 @@ class Board
 
     /**
      * @var string
+     * @ORM\Column(name="face", type="string")
+     */
+    private $face;
+
+    /**
+     * @var string
      * @ORM\Column(name="image", type="string", unique=true, nullable=true)
      */
     private $image;
+
+    /**
+     * @var Benefit
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Benefit", cascade={"persist"})
+     */
+    private $benefit;
 
     /**
      * @var Wonder[]
@@ -122,5 +134,37 @@ class Board
         $this->wonders[] = $wonder;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFace()
+    {
+        return $this->face;
+    }
+
+    /**
+     * @param string $face
+     */
+    public function setFace($face)
+    {
+        $this->face = $face;
+    }
+
+    /**
+     * @return Benefit
+     */
+    public function getBenefit()
+    {
+        return $this->benefit;
+    }
+
+    /**
+     * @param Benefit $benefit
+     */
+    public function setBenefit($benefit)
+    {
+        $this->benefit = $benefit;
     }
 }
