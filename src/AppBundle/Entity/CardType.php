@@ -25,9 +25,6 @@ class CardType
     /**
      * @var string
      * @ORM\Column(name="name", type="string")
-     *
-     * can be raw_materials, manufactured_products, civil_buildings, scientific_buildings,
-     * commercial_buildings, military_buildings, guilds
      */
     private $name;
 
