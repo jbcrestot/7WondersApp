@@ -19,7 +19,9 @@ class LoadBoardData extends AbstractFixture implements OrderedFixtureInterface
         $board1->setFace('A');
         $board1->setBenefit($this->getReference('ore'));
         // need wonders
-//        $board1->addWonder();
+        $board1->addWonder('wonder_2woods_3VP');
+        $board1->addWonder('wonder_3bricks_2MF');
+        $board1->addWonder('wonder_4ores_7VP');
         $manager->persist($board1);
 
 
@@ -28,7 +30,7 @@ class LoadBoardData extends AbstractFixture implements OrderedFixtureInterface
 
     public function getOrder() {
 
-        return 2;
+        return 3;
     }
 
 

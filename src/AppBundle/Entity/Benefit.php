@@ -22,6 +22,13 @@ class Benefit
     private $id;
 
     /**
+     * @var Item $item
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Items\Item", inversedBy="benefits")
+     * @ORM\JoinColumn(name="item", referencedColumnName="id")
+     */
+    private $item;
+
+    /**
      * @var int
      * @ORM\Column(name="gold", type="integer")
      */

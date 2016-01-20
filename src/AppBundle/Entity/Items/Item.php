@@ -76,6 +76,18 @@ abstract class Item
     }
 
     /**
+     * Benefit setter
+     * @param Benefit $benefits
+     * @return Benefit
+     */
+    public function setBenefits(array $benefits)
+    {
+        $this->benefits = $benefits;
+
+        return $this;
+    }
+
+    /**
      * Requirements getter
      * @return Resource[]
      */
@@ -98,6 +110,8 @@ abstract class Item
 
     public function setRequirements(array $requirements): array
     {
-        return $this->requirements = $requirements;
+        $this->requirements = $requirements;
+
+        return $this;
     }
 }
