@@ -37,13 +37,13 @@ class Wonder extends Item
     /**
      * Level setter
      * @param int $level
-     * @return int
+     * @return self
      */
     public function setLevel($level)
     {
         $this->level = $level;
 
-        return $this->level;
+        return $this;
     }
 
     /**
@@ -58,12 +58,12 @@ class Wonder extends Item
     /**
      * Board setter
      * @param Board $board
-     * @return Board
+     * @return self
      */
     public function setBoard($board)
     {
         $this->board = $board;
 
-        return $this->board;
+        return $this;
     }
 }

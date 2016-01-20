@@ -22,10 +22,10 @@ abstract class Item
     protected $id;
 
     /**
-     * @var Benefit
-     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Benefit", cascade={"persist"})
+     * @var Benefit[]
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Benefit")
      */
-    protected $benefit;
+    protected $benefits;
 
     /**
      * @var Resource[]
@@ -45,34 +45,34 @@ abstract class Item
     /**
      * Id setter
      * @param int $id
-     * @return int
+     * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
 
-        return $this->id;
+        return $this;
     }
 
     /**
-     * Benefit getter
-     * @return Benefit
+     * Benefits getter
+     * @return Benefit[]
      */
-    public function getBenefit()
+    public function getBenefits()
     {
-        return $this->benefit;
+        return $this->benefits;
     }
 
     /**
-     * Benefit setter
+     * Benefit adder
      * @param Benefit $benefit
-     * @return Benefit
+     * @return self
      */
-    public function setBenefit(Benefit $benefit)
+    public function addBenefit(Benefit $benefit)
     {
-        $this->benefit = $benefit;
+        $this->benefits[] = $benefit;
 
-        return $this->benefit;
+        return $this;
     }
 
     /**
@@ -86,13 +86,13 @@ abstract class Item
 
     /**
      * Requirements adder
-     * @param \AppBundle\Entity\Resource $requirement
-     * @return Resource[]
+     * @param Resource $requirement
+     * @return self
      */
     public function addRequirement(Resource $requirement)
     {
         $this->requirements[] = $requirement;
 
-        return $this->requirements;
+        return $this;
     }
 }

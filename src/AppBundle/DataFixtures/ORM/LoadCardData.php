@@ -32,10 +32,11 @@ class LoadCardData extends AbstractFixture implements OrderedFixtureInterface, C
     {
         foreach ($this->fixtures as $fixture) {
             $item = new Card();
-            $item->setName($fixture['name']);
-            $item->setMinPlayers($fixture['min_players']);
-            $item->setAge($fixture['age']);
-            $item->setType($this->getReference('card_type.'.$fixture['type']));
+            $item
+                ->setName($fixture['name'])
+                ->setMinPlayers($fixture['min_players'])
+                ->setAge($fixture['age'])
+                ->setType($this->getReference('card_type.'.$fixture['type']));
             foreach ($fixture['requirements'] as $requirement) {
                 $item->addRequirement($this->getReference('resource.'.$requirement));
             }

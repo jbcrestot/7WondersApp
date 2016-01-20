@@ -1,0 +1,8 @@
+parameters:
+    sciences:
+        -
+            name: gearing
+        -
+            name: tools
+        -
+            name: archeology

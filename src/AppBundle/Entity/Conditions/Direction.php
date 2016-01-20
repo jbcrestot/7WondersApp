@@ -43,13 +43,13 @@ class Direction
     /**
      * Id setter
      * @param mixed $id
-     * @return int
+     * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
 
-        return $this->id;
+        return $this;
     }
 
     /**
@@ -64,13 +64,13 @@ class Direction
     /**
      * Name setter
      * @param string $name
-     * @return string
+     * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
 
-        return $this->name;
+        return $this;
     }
 
     /**
@@ -85,12 +85,12 @@ class Direction
     /**
      * Code setter
      * @param string $code
-     * @return string
+     * @return self
      */
     public function setCode($code)
     {
         $this->code = $code;
 
-        return $this->code;
+        return $this;
     }
 }
