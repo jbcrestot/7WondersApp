@@ -16,3 +16,4 @@
 /.idea
 /.sass-cache
 /app/bootstrap.php.cache
+/bin/symfony_requirements
