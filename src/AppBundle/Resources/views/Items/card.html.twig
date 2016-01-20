@@ -1,6 +1,12 @@
 <div>
     <h2>Carte "{{ item.name }}"</h2>
 
+    <ul>
+        <li>{{ item.minPlayers }}+</li>
+        <li>Carte de l'age : {{ item.age }}</li>
+        <li>Carte de type : {{ item.type.name }} et de couleur {{ item.type.color }}</li>
+    </ul>
+
     <h3>Cartes précédentes:</h3>
     <ul>
         {% if item.previous is not empty %}

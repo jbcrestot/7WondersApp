@@ -1,0 +1,5 @@
+imports:
+    - { resource: "fixtures/card_types.yml" }
+    - { resource: "fixtures/cards.yml" }
+    - { resource: "fixtures/resources.yml" }
+    - { resource: "services.yml" }

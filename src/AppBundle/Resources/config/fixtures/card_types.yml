@@ -1,0 +1,26 @@
+parameters:
+    card_types:
+        -
+            name: raw_materials
+            color: brown
+        -
+            name: manufactures
+            color: grey
+        -
+            name: public_buildings
+            color: blue
+        -
+            name: scientists_buildings
+            color: green
+        -
+            name: commercial_buildings
+            color: yellow
+        -
+            name: military_buildings
+            color: red
+        -
+            name: guilds
+            color: purple
+        -
+            name: characters
+            color: white
