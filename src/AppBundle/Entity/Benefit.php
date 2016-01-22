@@ -23,33 +23,33 @@ class Benefit
 
     /**
      * @var int
-     * @ORM\Column(name="golds", type="integer")
+     * @ORM\Column(name="gold", type="integer")
      */
-    private $golds;
+    private $gold;
 
     /**
      * @var int
-     * @ORM\Column(name="victory_points", type="integer")
+     * @ORM\Column(name="victory_point", type="integer")
      */
-    private $victoryPoints;
+    private $victoryPoint;
 
     /**
      * @var int
-     * @ORM\Column(name="military_forces", type="integer")
+     * @ORM\Column(name="military_force", type="integer")
      */
-    private $militaryForces;
+    private $militaryForce;
 
     /**
-     * @var Science[]
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Science")
+     * @var Science
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Science")
      */
-    private $sciences;
+    private $science;
 
     /**
-     * @var Power[]
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Power")
+     * @var Power
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Power")
      */
-    private $powers;
+    private $power;
 
     /**
      * @var Direction[]
@@ -58,10 +58,10 @@ class Benefit
     private $directions;
 
     /**
-     * @var Resource[]
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Resource")
+     * @var Resource
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Resource")
      */
-    private $resources;
+    private $resource;
 
     /**
      * Id getter
@@ -75,118 +75,118 @@ class Benefit
     /**
      * Id setter
      * @param int $id
-     * @return int
+     * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
 
-        return $this->id;
+        return $this;
     }
 
     /**
-     * Golds getter
+     * Gold getter
      * @return int
      */
-    public function getGolds()
+    public function getGold()
     {
-        return $this->golds;
+        return $this->gold;
     }
 
     /**
-     * Golds setter
-     * @param int $golds
+     * Gold setter
+     * @param int $gold
+     * @return self
+     */
+    public function setGold($gold)
+    {
+        $this->gold = $gold;
+
+        return $this;
+    }
+
+    /**
+     * Victory point getter
      * @return int
      */
-    public function setGolds($golds)
+    public function getVictoryPoint()
     {
-        $this->golds = $golds;
-
-        return $this->golds;
+        return $this->victoryPoint;
     }
 
     /**
-     * Victory points getter
+     * Victory point setter
+     * @param int $victoryPoint
+     * @return self
+     */
+    public function setVictoryPoint($victoryPoint)
+    {
+        $this->victoryPoint = $victoryPoint;
+
+        return $this;
+    }
+
+    /**
+     * Military force getter
      * @return int
      */
-    public function getVictoryPoints()
+    public function getMilitaryForce()
     {
-        return $this->victoryPoints;
+        return $this->militaryForce;
     }
 
     /**
-     * Victory points setter
-     * @param int $victoryPoints
-     * @return int
+     * Military force setter
+     * @param int $militaryForce
+     * @return self
      */
-    public function setVictoryPoints($victoryPoints)
+    public function setMilitaryForce($militaryForce)
     {
-        $this->victoryPoints = $victoryPoints;
+        $this->militaryForce = $militaryForce;
 
-        return $this->victoryPoints;
+        return $this;
     }
 
     /**
-     * Military forces getter
-     * @return int
+     * Science getter
+     * @return Science
      */
-    public function getMilitaryForces()
+    public function getScience()
     {
-        return $this->militaryForces;
+        return $this->science;
     }
 
     /**
-     * Military forces setter
-     * @param int $militaryForces
-     * @return int
-     */
-    public function setMilitaryForces($militaryForces)
-    {
-        $this->militaryForces = $militaryForces;
-
-        return $this->militaryForces;
-    }
-
-    /**
-     * Sciences getter
-     * @return Science[]
-     */
-    public function getSciences()
-    {
-        return $this->sciences;
-    }
-
-    /**
-     * Sciences adder
+     * Science setter
      * @param Science $science
-     * @return Science[]
+     * @return self
      */
-    public function addScience(Science $science)
+    public function setScience(Science $science)
     {
-        $this->sciences[] = $science;
+        $this->science = $science;
 
-        return $this->sciences;
+        return $this;
     }
 
     /**
-     * Powers getter
-     * @return Power[]
+     * Power getter
+     * @return Power
      */
-    public function getPowers()
+    public function getPower()
     {
-        return $this->powers;
+        return $this->power;
     }
 
     /**
-     * Powers adder
+     * Power setter
      * @param Power $power
-     * @return Power[]
+     * @return self
      */
-    public function addPower(Power $power)
+    public function setPower(Power $power)
     {
-        $this->powers[] = $power;
+        $this->power = $power;
 
-        return $this->powers;
+        return $this;
     }
 
     /**
@@ -201,33 +201,33 @@ class Benefit
     /**
      * Directions adder
      * @param Direction $direction
-     * @return Direction[]
+     * @return self
      */
     public function addDirection(Direction $direction)
     {
         $this->directions[] = $direction;
 
-        return $this->directions;
+        return $this;
     }
 
     /**
-     * Resources getter
-     * @return Resource[]
+     * Resource getter
+     * @return Resource
      */
-    public function getResources()
+    public function getResource()
     {
-        return $this->resources;
+        return $this->resource;
     }
 
     /**
-     * Resources adder
-     * @param \AppBundle\Entity\Resource $resource
-     * @return Resource[]
+     * Resource setter
+     * @param Resource $resource
+     * @return self
      */
-    public function addResource(Resource $resource)
+    public function setResource(Resource $resource)
     {
-        $this->resources[] = $resource;
+        $this->resource = $resource;
 
-        return $this->resources;
+        return $this;
     }
 }

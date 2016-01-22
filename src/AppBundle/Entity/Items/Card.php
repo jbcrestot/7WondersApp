@@ -72,13 +72,13 @@ class Card extends Item
     /**
      * Name setter
      * @param string $name
-     * @return string
+     * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
 
-        return $this->name;
+        return $this;
     }
 
     /**
@@ -93,13 +93,13 @@ class Card extends Item
     /**
      * MinPlayers setter
      * @param int $minPlayers
-     * @return int
+     * @return self
      */
     public function setMinPlayers($minPlayers)
     {
         $this->minPlayers = $minPlayers;
 
-        return $this->minPlayers;
+        return $this;
     }
 
     /**
@@ -114,13 +114,13 @@ class Card extends Item
     /**
      * Image setter
      * @param string $image
-     * @return string
+     * @return self
      */
     public function setImage($image)
     {
         $this->image = $image;
 
-        return $this->image;
+        return $this;
     }
 
     /**
@@ -135,13 +135,13 @@ class Card extends Item
     /**
      * Age setter
      * @param int $age
-     * @return int
+     * @return self
      */
     public function setAge($age)
     {
         $this->age = $age;
 
-        return $this->age;
+        return $this;
     }
 
     /**
@@ -156,33 +156,13 @@ class Card extends Item
     /**
      * Type setter
      * @param CardType $type
-     * @return CardType
+     * @return self
      */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this->type;
-    }
-
-    /**
-     * Card type getter
-     * @return CardType
-     */
-    public function getCardType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Card type setter
-     * @param CardType $type
-     * @return CardType
-     */
-    public function setCardType(CardType $type)
+    public function setType(CardType $type)
     {
         $this->type = $type;
 
-        return $this->type;
+        return $this;
     }
 
     /**
@@ -197,13 +177,13 @@ class Card extends Item
     /**
      * Previous cards adder
      * @param Card $card
-     * @return Card[]
+     * @return self
      */
     public function addPrevious(Card $card)
     {
         $this->previous[] = $card;
 
-        return $this->previous;
+        return $this;
     }
 
     /**
@@ -218,12 +198,12 @@ class Card extends Item
     /**
      * Next cards adder
      * @param Card $card
-     * @return Card[]
+     * @return self
      */
     public function addNext(Card $card)
     {
         $this->next[] = $card;
 
-        return $this->next;
+        return $this;
     }
 }

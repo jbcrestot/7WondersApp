@@ -7,9 +7,9 @@ use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use AppBundle\Entity\CardType;
+use AppBundle\Entity\Science;
 
-class LoadCardTypeData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
+class LoadScienceData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
 {
     /**
      * Fixtures data
@@ -22,7 +22,7 @@ class LoadCardTypeData extends AbstractFixture implements OrderedFixtureInterfac
      */
     public function setContainer(ContainerInterface $container = null)
     {
-        $this->fixtures = $container->getParameter('card_types');
+        $this->fixtures = $container->getParameter('sciences');
     }
 
     /**
@@ -31,12 +31,11 @@ class LoadCardTypeData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager)
     {
         foreach ($this->fixtures as $fixture) {
-            $item = new CardType();
+            $item = new Science();
             $item
-                ->setName($fixture['name'])
-                ->setColor($fixture['color']);
+                ->setName($fixture['name']);
             $manager->persist($item);
-            $this->addReference('card_type.'.$fixture['name'], $item);
+            $this->addReference('science.'.$fixture['name'], $item);
         }
         $manager->flush();
     }

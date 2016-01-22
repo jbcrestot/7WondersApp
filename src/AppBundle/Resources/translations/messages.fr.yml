@@ -26,3 +26,7 @@ cards:
     metier_a_tisser: "Métier à tisser"
     verrerie: "Verrerie"
     presse: "Presse"
+sciences:
+    gearing: "Engrenage"
+    tools: "Outillage"
+    archeology: "Archéologie"

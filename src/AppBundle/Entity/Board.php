@@ -52,13 +52,13 @@ class Board
     /**
      * Id setter
      * @param int $id
-     * @return int
+     * @return self
      */
     public function setId($id)
     {
         $this->id = $id;
 
-        return $this->id;
+        return $this;
     }
 
     /**
@@ -73,13 +73,13 @@ class Board
     /**
      * Name setter
      * @param string $name
-     * @return string
+     * @return self
      */
     public function setName($name)
     {
         $this->name = $name;
 
-        return $this->name;
+        return $this;
     }
 
     /**
@@ -94,13 +94,13 @@ class Board
     /**
      * Image setter
      * @param string $image
-     * @return string
+     * @return self
      */
     public function setImage($image)
     {
         $this->image = $image;
 
-        return $this->image;
+        return $this;
     }
 
     /**
@@ -115,12 +115,12 @@ class Board
     /**
      * Wonders adder
      * @param Wonder $wonder
-     * @return Wonder[]
+     * @return self
      */
     public function addWonder(Wonder $wonder)
     {
         $this->wonders[] = $wonder;
 
-        return $this->wonders;
+        return $this;
     }
 }
