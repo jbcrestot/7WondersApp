@@ -1,0 +1,7 @@
+fixtures:
+    -
+        name: gearing
+    -
+        name: tools
+    -
+        name: archeology
