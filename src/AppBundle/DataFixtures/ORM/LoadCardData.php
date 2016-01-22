@@ -2,29 +2,11 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Items\Card;
 
-class LoadCardData extends AbstractFixture implements OrderedFixtureInterface, ContainerAwareInterface
+class LoadCardData extends AbstractLoadData
 {
-    /**
-     * Fixtures data
-     * @param array
-     */
-    private $fixtures;
-
-    /**
-     * {@inheritdoc}
-     */
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->fixtures = $container->getParameter('cards');
-    }
-
     /**
      * {@inheritdoc}
      */
