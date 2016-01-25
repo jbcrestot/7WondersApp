@@ -22,27 +22,20 @@ class Benefit
     private $id;
 
     /**
-     * @var Item $item
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Items\Item", inversedBy="benefits")
-     * @ORM\JoinColumn(name="item", referencedColumnName="id")
-     */
-    private $item;
-
-    /**
      * @var int
-     * @ORM\Column(name="gold", type="integer")
+     * @ORM\Column(name="gold", type="integer", nullable=true)
      */
     private $gold;
 
     /**
      * @var int
-     * @ORM\Column(name="victory_point", type="integer")
+     * @ORM\Column(name="victory_point", type="integer", nullable=true)
      */
     private $victoryPoint;
 
     /**
      * @var int
-     * @ORM\Column(name="military_force", type="integer")
+     * @ORM\Column(name="military_force", type="integer", nullable=true)
      */
     private $militaryForce;
 

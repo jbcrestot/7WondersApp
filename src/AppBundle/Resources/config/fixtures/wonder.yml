@@ -1,0 +1,10 @@
+fixtures:
+    ## rhodes
+    -
+        reference
+        level: 1
+        requirements:
+            - resource.wood
+            - resource.wood
+        benefits: []
+

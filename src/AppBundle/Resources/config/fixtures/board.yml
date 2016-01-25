@@ -1,0 +1,8 @@
+fixtures:
+    -
+        name: boards.rhodes_colossus
+        face: A
+        wonders:
+            - wonder_2woods_3VP
+            - wonder_3bricks_2MF
+            - wnoder_4ores_7VP

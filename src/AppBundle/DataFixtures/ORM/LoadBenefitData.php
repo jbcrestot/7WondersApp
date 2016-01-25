@@ -3,33 +3,24 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Benefit;
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadBenefitData extends AbstractFixture implements OrderedFixtureInterface
+class LoadBenefitData extends AbstractLoadData
 {
     public function load(ObjectManager $manager)
     {
-        // PV
-        $victroyPoint = new Benefit();
-        $victroyPoint->setVictoryPoints(1);
-        $manager->persist($victroyPoint);
 
-        // militar point
-        $militaryForce = new Benefit();
-        $militaryForce->setMilitaryForces(1);
-        $manager->persist($militaryForce);
+        foreach ($this->fixtures as $fixture) {
+            $benefit = new Benefit();
+//            $benefit->setMinPlayers($fixture['min_players'])
+//                ->setAge($fixture['age'])
+//                ->setType($this->getReference('card_type.'.$fixture['type']));
 
-        $gold = new Benefit();
-        $gold->setGolds(1);
-        $manager->persist($gold);
-
+            $manager->persist($benefit);
+//            $this->addReference('card.'.$fixture['name'], $benefit);
+        }
         $manager->flush();
 
-        $this->addReference('victoryPoint', $victroyPoint);
-        $this->addReference('militaryForce', $militaryForce);
-        $this->addReference('goldCoin', $gold);
     }
 
     public function getOrder() {

@@ -30,3 +30,5 @@ sciences:
     gearing: "Engrenage"
     tools: "Outillage"
     archeology: "Archéologie"
+boards:
+    rhodes_colossus: Le colosse de Rhodes

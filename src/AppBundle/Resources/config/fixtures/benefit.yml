@@ -1,0 +1,12 @@
+fixtures:
+    -
+        victory_point: 1
+
+    -
+        military_forces: 1
+
+    -
+        gold: 1
+
+    -
+        science: wheel

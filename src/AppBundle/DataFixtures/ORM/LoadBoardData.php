@@ -3,27 +3,21 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Board;
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadBoardData extends AbstractFixture implements OrderedFixtureInterface
+class LoadBoardData extends AbstractLoadData
 {
     public function load(ObjectManager $manager)
     {
-        /*
-         * brique
-         */
-        $board1 = new Board();
-        $board1->setName('Le colosse de Rhodes');
-        $board1->setFace('A');
-        $board1->setBenefit($this->getReference('ore'));
-        // need wonders
-        $board1->addWonder('wonder_2woods_3VP');
-        $board1->addWonder('wonder_3bricks_2MF');
-        $board1->addWonder('wonder_4ores_7VP');
-        $manager->persist($board1);
-
+        foreach ($this->fixtures as $fixture) {
+            $board = new Board();
+            $board->setName($fixture['name'])
+                ->setFace($fixture['face']);
+            foreach ($fixture['wonders'] as $wonders) {
+                $board->addWonder($wonders);
+            }
+            $manager->persist($board);
+        }
 
         $manager->flush();
     }
