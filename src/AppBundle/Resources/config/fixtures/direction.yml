@@ -1,0 +1,11 @@
+fixtures:
+    -
+        name: self
+    -
+        name: left
+    -
+        name: right
+    -
+        name: other
+    -
+        name: all

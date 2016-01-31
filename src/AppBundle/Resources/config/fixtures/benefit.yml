@@ -1,12 +1,28 @@
 fixtures:
     -
         victory_point: 1
+        reference: vp
 
     -
         military_forces: 1
+        reference: mf
 
     -
         gold: 1
+        reference: g
 
     -
-        science: wheel
+        science: gearing
+        reference: sci_g
+
+    -
+        science: tools
+        reference: sci_t
+
+    -
+        science: archeology
+        reference: sci_a
+
+    -
+        resource: wood
+        reference: res_w

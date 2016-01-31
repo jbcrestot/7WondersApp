@@ -1,10 +1,13 @@
 fixtures:
     ## rhodes
     -
-        reference
         level: 1
         requirements:
             - resource.wood
             - resource.wood
-        benefits: []
+        benefits:
+            - benefit.vp
+            - benefit.vp
+            - benefit.vp
+
 

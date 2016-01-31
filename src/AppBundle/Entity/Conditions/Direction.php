@@ -21,13 +21,13 @@ class Direction
 
     /**
      * @var string
-     * @ORM\Column(name="name", type="string")
+     * @ORM\Column(name="name", type="string", columnDefinition="ENUM('left', 'right', 'self', 'others', 'all')")
      */
     private $name;
 
     /**
      * @var string
-     * @ORM\Column(name="code", type="string")
+     * @ORM\Column(name="code", type="string", nullable=true)
      */
     private $code;
 
